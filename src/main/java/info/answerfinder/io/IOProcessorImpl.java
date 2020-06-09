@@ -2,16 +2,21 @@ package info.answerfinder.io;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 import info.answerfinder.algorithm.QAMatcher;
 import info.answerfinder.exceptions.InputException;
-import info.answerfinder.textprocessor.TextModel;
+import info.answerfinder.textmodel.TextModel;
 
 public class IOProcessorImpl implements IOProcessor {
+
+    String paragraph;
+    List<String> questions;
+    String answers;
+
+    private final String filePath;
 
     public String getParagraph() {
         return paragraph;
@@ -24,12 +29,6 @@ public class IOProcessorImpl implements IOProcessor {
     public String getAnswers() {
         return answers;
     }
-
-    String paragraph;
-    List<String> questions;
-    String answers;
-
-    private final String filePath;
 
     public IOProcessorImpl(String filePath) {
         this.filePath = filePath;
@@ -77,7 +76,7 @@ public class IOProcessorImpl implements IOProcessor {
     @Override
     public void processOutput(TextModel textModel, QAMatcher qaMatcher) {
         for(int i = 0 ; i < qaMatcher.getBestMatch().length; i++){
-            System.out.println(textModel.getAnswers().getAnswerSentences().get(qaMatcher.getBestMatch()[i]));
+            System.out.println(textModel.getAnswers().getSentences().get(qaMatcher.getBestMatch()[i]));
         }
     }
 }

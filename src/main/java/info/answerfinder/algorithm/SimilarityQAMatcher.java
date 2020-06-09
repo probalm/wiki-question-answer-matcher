@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import info.answerfinder.textprocessor.TextModel;
+import info.answerfinder.textmodel.TextModel;
 
 public class SimilarityQAMatcher implements QAMatcher {
 

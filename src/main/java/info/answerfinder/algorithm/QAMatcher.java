@@ -1,6 +1,6 @@
 package info.answerfinder.algorithm;
 
-import info.answerfinder.textprocessor.TextModel;
+import info.answerfinder.textmodel.TextModel;
 
 public interface QAMatcher {
     void match(TextModel textModel);

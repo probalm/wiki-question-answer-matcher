@@ -3,7 +3,8 @@ import info.answerfinder.algorithm.QAMatcherFactory;
 import info.answerfinder.exceptions.InputException;
 import info.answerfinder.io.IOProcessor;
 import info.answerfinder.io.IoProcessorFactory;
-import info.answerfinder.textprocessor.TextModel;
+import info.answerfinder.textmodel.TextModel;
+import info.answerfinder.textprocessor.TextProcessor;
 
 public class MainRunner {
 
@@ -20,7 +21,8 @@ public class MainRunner {
         try {
             ioProcessor.processInput();
             TextModel textModel = new TextModel(ioProcessor.getParagraph(), ioProcessor.getQuestions(), ioProcessor.getAnswers());
-            textModel.processText();
+            TextProcessor textProcessor = TextProcessor.getInstance();
+            textProcessor.processText(textModel);
             QAMatcher qaMatcher = QAMatcherFactory.getQAMatcher();
             qaMatcher.match(textModel);
             ioProcessor.processOutput(textModel, qaMatcher);

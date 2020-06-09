@@ -4,7 +4,7 @@ import java.util.List;
 
 import info.answerfinder.algorithm.QAMatcher;
 import info.answerfinder.exceptions.InputException;
-import info.answerfinder.textprocessor.TextModel;
+import info.answerfinder.textmodel.TextModel;
 
 public interface IOProcessor {
 

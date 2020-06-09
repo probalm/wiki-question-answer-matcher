@@ -1,11 +1,6 @@
-package info.answerfinder.textprocessor;
+package info.answerfinder.textmodel;
 
-import java.util.Collection;
 import java.util.List;
-
-import info.answerfinder.textprocessor.Answers;
-import info.answerfinder.textprocessor.Paragraph;
-import info.answerfinder.textprocessor.Questions;
 
 public class TextModel {
     Paragraph paragraph;
@@ -30,9 +25,4 @@ public class TextModel {
         return paragraph;
     }
 
-    public void processText() {
-        paragraph.process();
-        questions.process();
-        answers.process();
-    }
 }
