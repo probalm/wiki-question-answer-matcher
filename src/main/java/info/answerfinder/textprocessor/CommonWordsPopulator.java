@@ -8,7 +8,7 @@ import java.util.Set;
 
 public class CommonWordsPopulator {
 
-    private static String configFilePath = "/Users/p0m00nv/project/Wikipedia_QnA_Match/Wiki_QnA/src/main/resources/commonwords.config";
+    private static String configFilePath = "src/main/resources/commonwords.config";
 
     public static Set<String> getCommonWords() {
         Set<String> commonWords = new HashSet<>();
